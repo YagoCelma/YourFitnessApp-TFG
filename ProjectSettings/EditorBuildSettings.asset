@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Registro.unity
+    guid: a8777156c71400a418ea5276502cada1
+  - enabled: 1
+    path: Assets/Scenes/Principal.unity
+    guid: 7508e97a6cc4063408dd029a82be961a
+  - enabled: 1
+    path: Assets/Scenes/Ejercicio.unity
+    guid: 235f2b1206fde7d4f8f7afdbeb2f812f
+  - enabled: 1
+    path: Assets/Scenes/Rutinas.unity
+    guid: 908982d15c6ff8f48a0d9ef399bcc381
+  - enabled: 1
+    path: Assets/Scenes/Progreso.unity
+    guid: e0d15823d439f664aa761549be11c043
+  - enabled: 1
+    path: Assets/Scenes/Alarmas.unity
+    guid: fba692e667b645740bf60c9b93d1e70e
+  - enabled: 1
+    path: Assets/Scenes/ListaRutinas.unity
+    guid: 9b043d25118b95f4fb48711334ce24cc
+  - enabled: 1
+    path: Assets/Scenes/Perfil.unity
+    guid: 7c7c60c90d20cd3438d6be2d5dc07ae3
+  - enabled: 1
+    path: Assets/Scenes/CreadoraRutinas.unity
+    guid: d987b48381086ef43a2f0d597800596b
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0

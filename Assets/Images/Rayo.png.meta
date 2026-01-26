@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 2445728a822e4974d833f414f9e41bbe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3093207718481668220
+    second: Rayo_0
+  - first:
+      213: -5248079629074327326
+    second: Rayo_1
+  - first:
+      213: 815628406558052445
+    second: Rayo_2
+  - first:
+      213: 7348651088744387106
+    second: Rayo_3
+  - first:
+      213: 8099608747631850702
+    second: Rayo_4
+  - first:
+      213: -5098348856142871809
+    second: Rayo_5
+  - first:
+      213: -4850264090941448650
+    second: Rayo_6
+  - first:
+      213: 7798401410303261311
+    second: Rayo_7
+  - first:
+      213: 6151840691983273064
+    second: Rayo_8
+  - first:
+      213: -3015154984991153327
+    second: Rayo_9
+  - first:
+      213: 8746529009383502727
+    second: Rayo_10
+  - first:
+      213: -4471498360158275140
+    second: Rayo_11
+  - first:
+      213: 3776085233497314921
+    second: Rayo_12
+  - first:
+      213: -3345037088033714745
+    second: Rayo_13
+  - first:
+      213: -9220070112240451975
+    second: Rayo_14
+  - first:
+      213: 3201560980764352102
+    second: Rayo_15
+  - first:
+      213: 7901916211790904146
+    second: Rayo_16
+  - first:
+      213: -862491717869062175
+    second: Rayo_17
+  - first:
+      213: -3255569911582440361
+    second: Rayo_18
+  - first:
+      213: -3082956094862961616
+    second: Rayo_19
+  - first:
+      213: -3061784832859394243
+    second: Rayo_20
+  - first:
+      213: -4292878078966061715
+    second: Rayo_21
+  - first:
+      213: 5393944111271997181
+    second: Rayo_22
+  - first:
+      213: -6480319688493319275
+    second: Rayo_23
+  - first:
+      213: -5607528437539896861
+    second: Rayo_24
+  - first:
+      213: -5662128394287509821
+    second: Rayo_25
+  - first:
+      213: -8770275145119200045
+    second: Rayo_26
+  - first:
+      213: 5866259875847704148
+    second: Rayo_27
+  - first:
+      213: -109037561847128920
+    second: Rayo_28
+  - first:
+      213: 7685208930560952257
+    second: Rayo_29
+  - first:
+      213: 8518784890550906230
+    second: Rayo_30
+  - first:
+      213: -7901825839268014844
+    second: Rayo_31
+  - first:
+      213: 441636377593591630
+    second: Rayo_32
+  - first:
+      213: -7341994921164760075
+    second: Rayo_33
+  - first:
+      213: 1772360626939390944
+    second: Rayo_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rayo_0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 508
+        width: 335
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c78a89c08084dea20800000000000000
+      internalID: 3093207718481668220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e89f0402631b27b0800000000000000
+      internalID: -5248079629074327326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1351
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d505c91e6b1b15b00800000000000000
+      internalID: 815628406558052445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22295eafa37abf560800000000000000
+      internalID: 7348651088744387106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec43e3e0e37976070800000000000000
+      internalID: 8099608747631850702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_5
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2c5904ab60f39b0800000000000000
+      internalID: -5098348856142871809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_6
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e1a90d18660bcb0800000000000000
+      internalID: -4850264090941448650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_7
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7af705d3cc793c60800000000000000
+      internalID: 7798401410303261311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_8
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1353
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86cc478f38abf5550800000000000000
+      internalID: 6151840691983273064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_9
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1353
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153aad024840826d0800000000000000
+      internalID: -3015154984991153327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_10
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783f3fdfac9e16970800000000000000
+      internalID: 8746529009383502727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 509
+        width: 330
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb93605beeb02f1c0800000000000000
+      internalID: -4471498360158275140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_12
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1114
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96694386389576430800000000000000
+      internalID: 3776085233497314921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_13
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 443
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd4e3fbd7a0491d0800000000000000
+      internalID: -3345037088033714745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 415
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e36bb351bbb0080800000000000000
+      internalID: -9220070112240451975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 415
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ed539dfba3e6c20800000000000000
+      internalID: 3201560980764352102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_16
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 415
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b72b0bdee39ad60800000000000000
+      internalID: 7901916211790904146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_17
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 415
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7b2be2a50d704f0800000000000000
+      internalID: -862491717869062175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_18
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 415
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754cda60a64e1d2d0800000000000000
+      internalID: -3255569911582440361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_19
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 415
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034519314c32735d0800000000000000
+      internalID: -3082956094862961616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_20
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 415
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3facb2aaea5285d0800000000000000
+      internalID: -3061784832859394243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_21
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 415
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65aa2fb122ac64c0800000000000000
+      internalID: -4292878078966061715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_22
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 415
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe6da247932bda40800000000000000
+      internalID: 5393944111271997181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_23
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 415
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bb268d3974116a0800000000000000
+      internalID: -6480319688493319275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_24
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 415
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e18884989e0e22b0800000000000000
+      internalID: -5607528437539896861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_25
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 415
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce07d189341c61b0800000000000000
+      internalID: -5662128394287509821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_26
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 415
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc8bb0f839b94680800000000000000
+      internalID: -8770275145119200045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_27
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e870cb644296150800000000000000
+      internalID: 5866259875847704148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_28
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac5dea4aee9c7ef0800000000000000
+      internalID: -109037561847128920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_29
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 82
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7cebaedc857aa60800000000000000
+      internalID: 7685208930560952257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_30
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 79
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d604739bdc83670800000000000000
+      internalID: 8518784890550906230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_31
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 82
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4055d6dc343175290800000000000000
+      internalID: -7901825839268014844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_32
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 82
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e473b5e02f1012600800000000000000
+      internalID: 441636377593591630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_33
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 31
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb904dc48efb1a90800000000000000
+      internalID: -7341994921164760075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rayo_34
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 31
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb6c9e8990b89810800000000000000
+      internalID: 1772360626939390944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6605768e464f2ef4db9ad92bb23daaf2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rayo_0: 3093207718481668220
+      Rayo_1: -5248079629074327326
+      Rayo_10: 8746529009383502727
+      Rayo_11: -4471498360158275140
+      Rayo_12: 3776085233497314921
+      Rayo_13: -3345037088033714745
+      Rayo_14: -9220070112240451975
+      Rayo_15: 3201560980764352102
+      Rayo_16: 7901916211790904146
+      Rayo_17: -862491717869062175
+      Rayo_18: -3255569911582440361
+      Rayo_19: -3082956094862961616
+      Rayo_2: 815628406558052445
+      Rayo_20: -3061784832859394243
+      Rayo_21: -4292878078966061715
+      Rayo_22: 5393944111271997181
+      Rayo_23: -6480319688493319275
+      Rayo_24: -5607528437539896861
+      Rayo_25: -5662128394287509821
+      Rayo_26: -8770275145119200045
+      Rayo_27: 5866259875847704148
+      Rayo_28: -109037561847128920
+      Rayo_29: 7685208930560952257
+      Rayo_3: 7348651088744387106
+      Rayo_30: 8518784890550906230
+      Rayo_31: -7901825839268014844
+      Rayo_32: 441636377593591630
+      Rayo_33: -7341994921164760075
+      Rayo_34: 1772360626939390944
+      Rayo_4: 8099608747631850702
+      Rayo_5: -5098348856142871809
+      Rayo_6: -4850264090941448650
+      Rayo_7: 7798401410303261311
+      Rayo_8: 6151840691983273064
+      Rayo_9: -3015154984991153327
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

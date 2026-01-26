@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853631644688",
+    "project_id": "yourfitness-4d2ce",
+    "storage_bucket": "yourfitness-4d2ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853631644688:android:69e66207bacabcc7724695",
+        "android_client_info": {
+          "package_name": "com.tfg.gymapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJt3wzvl5hX3RfHBoQqjQ7jPzioiG5cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
