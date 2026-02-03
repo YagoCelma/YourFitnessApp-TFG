@@ -10,7 +10,7 @@ public class GestorPrincipal : MonoBehaviour
 
     public void Rutinas()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(7);
     }
 
     public void Progreso()
