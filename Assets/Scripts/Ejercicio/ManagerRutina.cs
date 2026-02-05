@@ -20,5 +20,10 @@ public class ManagerRutina : MonoBehaviour
         Canvas.ForceUpdateCanvases();
     }
 
+    public void EliminarEjercicio()
+    {
+        Destroy(panelEjercicioPrefab);
+    }
+
  
 }

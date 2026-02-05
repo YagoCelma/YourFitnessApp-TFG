@@ -467,6 +467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel
@@ -766,8 +770,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -6684430161380966744, guid: 3d6afd1ae1fc5674296d98761da7db7e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1214,6 +1218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (5)
@@ -1820,6 +1828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (2)
@@ -1922,6 +1934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (6)
@@ -2161,6 +2177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (1)
@@ -2307,6 +2327,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (3)
@@ -2546,6 +2570,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 35982668}
     m_Modifications:
+    - target: {fileID: 2295293602631654757, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2660610060407851672, guid: 2e9353f4efe3eb14796a3daa586d5bbb, type: 3}
       propertyPath: m_Name
       value: Alarmas Panel (4)

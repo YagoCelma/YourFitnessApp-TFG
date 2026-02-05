@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using Firebase.Auth;
+using Firebase.Firestore;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +19,13 @@ public class CalculadoraCalorias : MonoBehaviour
     public TextMeshProUGUI caloriasBasalesTexto;
     
 
+    FirebaseAuth auth;
+    FirebaseFirestore db;
+    void Start()
+    {
+        auth = FirebaseAuth.DefaultInstance;
+        db = FirebaseFirestore.DefaultInstance;
+    }
 
     public void calcularTodo()
     {
@@ -29,6 +40,10 @@ public class CalculadoraCalorias : MonoBehaviour
         int caloriasFinalesEnteras = Mathf.RoundToInt((float) caloriasFinales);
 
         mostrarCalorias(caloriasBasalesEnteras, caloriasFinalesEnteras);
+
+        double pesoDouble = Double.Parse(peso.text);
+
+        guardarPeso(pesoDouble, caloriasFinalesEnteras);
 
     }
     public double calcularCaloriasBasalesSexo()
@@ -115,5 +130,44 @@ public class CalculadoraCalorias : MonoBehaviour
 
         string caloriasBasalesTextoD = caloriasBasales.ToString();
         caloriasBasalesTexto.text = caloriasBasalesTextoD;
+    }
+
+    public void guardarPeso(double peso, int calorias)
+    {
+
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+
+        if (auth.CurrentUser == null)
+        {
+            Debug.LogError("No hay ningun usuario iniciado");
+            return;
+        }
+
+        string uid = auth.CurrentUser.UserId;
+        Debug.Log("UID REAL = " + uid);
+
+        Dictionary<string, object> datosPeso = new Dictionary<string, object>
+        {
+            { "peso", peso },
+            { "timestamp", Timestamp.GetCurrentTimestamp() },
+            { "calorias totales", calorias}
+        };
+
+        db.Collection("users")
+          .Document(uid)
+          .Collection("pesoHistorial")
+          .AddAsync(datosPeso)
+          .ContinueWith(task =>
+          {
+              if (task.IsFaulted)
+              {
+                  Debug.LogError("Error al guardar peso: " + task.Exception);
+              }
+              else
+              {
+                  Debug.Log("Peso guardado correctamente");
+              }
+          });
     }
 }

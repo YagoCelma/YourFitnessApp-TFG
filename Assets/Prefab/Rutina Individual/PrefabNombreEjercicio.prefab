@@ -427,8 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abf4177a61c7824380d81cbd2d734ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RutinaItem
-  rutinaId: 
-  nombreTexto: {fileID: 0}
+  nombreRutina: {fileID: 3824980952736506892}
 --- !u!114 &6618372256776899172
 MonoBehaviour:
   m_ObjectHideFlags: 0

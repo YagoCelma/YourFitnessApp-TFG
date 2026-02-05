@@ -27,11 +27,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Alarmas.unity
     guid: fba692e667b645740bf60c9b93d1e70e
   - enabled: 1
-    path: Assets/Scenes/Rutina Indvidual.unity
+    path: Assets/Scenes/ListaRutinas.unity
     guid: 9b043d25118b95f4fb48711334ce24cc
   - enabled: 1
     path: Assets/Scenes/Perfil.unity
     guid: 7c7c60c90d20cd3438d6be2d5dc07ae3
+  - enabled: 1
+    path: Assets/Scenes/CreadoraRutinas.unity
+    guid: d987b48381086ef43a2f0d597800596b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

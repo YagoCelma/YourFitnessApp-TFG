@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using Firebase.Auth;
 using Firebase.Firestore;
 using UnityEngine;
@@ -55,4 +55,4 @@ public class RutinasController : MonoBehaviour
         RutinaItem ui = item.GetComponent<RutinaItem>();
         ui.Iniciar(rutinaId, nombre);
     }
-}
+}*/
