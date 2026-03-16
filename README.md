@@ -19,7 +19,7 @@ YourFitnessApp, aplicación móvil desarrollada en Unity para la planificación 
 ![Rutinas](Screenshots/ListaRutinas.png)
 
 ### Creación rutina
-![Creación de rutinas](Screenshots/CreacionRutinas.png)
+![Creación de rutinas](Screenshots/CreacionRutina.png)
 
 ### Rutinas ejercicio
 ![Rutinas ejercicio](Screenshots/RutinaEjercicios.png)
