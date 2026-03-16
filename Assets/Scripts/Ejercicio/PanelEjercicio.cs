@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelEjercicio : MonoBehaviour
 {
@@ -13,12 +14,21 @@ public class PanelEjercicio : MonoBehaviour
         numeroSerie++;
 
         
-        GameObject nuevaFila = Instantiate(
-            filaInputsPrefab,
-            contenedorSeries
-        );
+        GameObject nuevaFila = Instantiate(filaInputsPrefab,contenedorSeries);
 
         FilaSerie fila = nuevaFila.GetComponent<FilaSerie>();
         fila.SetNumeroSerie(numeroSerie);
+    }
+
+    public void EliminarSerie()
+    {
+
+        if (contenedorSeries.childCount <= 1) return;
+
+        Destroy(contenedorSeries.GetChild(contenedorSeries.childCount - 1).gameObject);
+
+        numeroSerie--;
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(contenedorSeries.GetComponent<RectTransform>());
     }
 }

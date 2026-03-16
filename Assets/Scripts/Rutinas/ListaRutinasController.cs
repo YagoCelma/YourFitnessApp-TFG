@@ -16,12 +16,12 @@ public class ListaRutinasController : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         db = FirebaseFirestore.DefaultInstance;
 
-        CargarRutina();
+        CargarRutinas();
     }
 
-    void CargarRutina()
+    void CargarRutinas()
     {
-        if(auth.CurrentUser == null)
+        if (auth.CurrentUser == null)
         {
             Debug.LogError("No hay un usuario logeado");
             return;
@@ -29,16 +29,19 @@ public class ListaRutinasController : MonoBehaviour
 
         string uid = auth.CurrentUser.UserId;
 
-        db.Collection("users").Document(uid).Collection("rutinas").GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        db.Collection("users")
+        .Document(uid)
+        .Collection("rutinas")
+        .GetSnapshotAsync()
+        .ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
-                Debug.LogError("Error al cargar rutinas: " + task.Exception);
+                Debug.LogError("Error al cargar rutinas");
                 return;
             }
 
-            //Para recorrer toda la rutina
-            foreach(var doc in task.Result.Documents)
+            foreach (var doc in task.Result.Documents)
             {
                 string rutinaId = doc.Id;
                 string nombre = doc.GetValue<string>("nombre");
@@ -51,7 +54,9 @@ public class ListaRutinasController : MonoBehaviour
     void CrearRutina(string rutinaId, string nombre)
     {
         GameObject item = Instantiate(rutinaPrefab, contenedoresRutinas);
+
         RutinaItem rutinaItem = item.GetComponent<RutinaItem>();
+
         rutinaItem.Iniciar(rutinaId, nombre);
     }
 }

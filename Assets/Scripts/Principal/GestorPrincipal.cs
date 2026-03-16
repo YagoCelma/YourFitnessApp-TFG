@@ -5,7 +5,7 @@ public class GestorPrincipal : MonoBehaviour
 {
     public void Ejercicio()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(11);
     }
 
     public void Rutinas()
@@ -26,5 +26,10 @@ public class GestorPrincipal : MonoBehaviour
     public void Perfil()
     {
         SceneManager.LoadScene(8);
+    }
+
+    public void Calendario()
+    {
+        SceneManager.LoadScene(10);
     }
 }

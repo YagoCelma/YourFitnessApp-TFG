@@ -14,10 +14,7 @@ public class AgregarSerie : MonoBehaviour
         foreach (TMP_InputField input in nuevaFila.GetComponentsInChildren<TMP_InputField>())
             input.text = "";
 
-        // Opcional, ni siquiera siempre necesario
-        LayoutRebuilder.ForceRebuildLayoutImmediate(
-            contenedorSeries.GetComponent<RectTransform>()
-        );
+        LayoutRebuilder.ForceRebuildLayoutImmediate(contenedorSeries.GetComponent<RectTransform>());
     }
 
     public void EliminarSerie()

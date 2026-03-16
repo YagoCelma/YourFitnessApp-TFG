@@ -57,13 +57,13 @@ public class CalculadoraCalorias : MonoBehaviour
 
         Toggle sexoSeleccionado = sexoGrupo.GetFirstActiveToggle();
 
-        if(sexoSeleccionado.name == "Toggle_Hombre")
+        if(sexoSeleccionado.name == "Hombre")
         {
             tmb = (10 * pesoNumber) + (6.25 * alturaNumber) - (5 * edadNumber) + 5;
 
             return tmb;
 
-        }else if(sexoSeleccionado.name == "Toggle_Mujer")
+        }else if(sexoSeleccionado.name == "Mujer")
         {
             tmb = (10 * pesoNumber) + (6.25 * alturaNumber) - (5 * edadNumber) - 161;
 
@@ -83,13 +83,13 @@ public class CalculadoraCalorias : MonoBehaviour
         double tdee;
         Toggle actividadSeleccionada = actividadGrupo.GetFirstActiveToggle();
         
-        if(actividadSeleccionada.name == "Toggle_Bajo")
+        if(actividadSeleccionada.name == "Bajo")
         {
             return tdee = tmb * 1.375;
-        }else if(actividadSeleccionada.name == "Toggle_Medio")
+        }else if(actividadSeleccionada.name == "Medio")
         {
             return tdee = tmb * 1.55;
-        }else if (actividadSeleccionada.name == "Toggle_Alto")
+        }else if (actividadSeleccionada.name == "Alto")
         {
             return tdee = tmb * 1.725;
         }
@@ -106,13 +106,13 @@ public class CalculadoraCalorias : MonoBehaviour
         double caloriasFinales;
         Toggle objetivoSeleccionado = objetivoGrupo.GetFirstActiveToggle();
 
-        if(objetivoSeleccionado.name == "Toggle_Definicion")
+        if(objetivoSeleccionado.name == "Definicion")
         {
             return caloriasFinales = calorias * 0.85;
-        }else if (objetivoSeleccionado.name == "Toggle_Mantenimiento")
+        }else if (objetivoSeleccionado.name == "Mantenimiento")
         {
             return calorias;
-        }else if (objetivoSeleccionado.name == "Toggle_Volumen")
+        }else if (objetivoSeleccionado.name == "Volumen")
         {
             return caloriasFinales = calorias * 1.10;
         }
@@ -149,9 +149,9 @@ public class CalculadoraCalorias : MonoBehaviour
 
         Dictionary<string, object> datosPeso = new Dictionary<string, object>
         {
-            { "peso", peso },
-            { "timestamp", Timestamp.GetCurrentTimestamp() },
-            { "calorias totales", calorias}
+            { "calorias totales", calorias},
+            {"peso", peso},
+            { "timestamp", Timestamp.GetCurrentTimestamp() }
         };
 
         db.Collection("users")
@@ -169,5 +169,33 @@ public class CalculadoraCalorias : MonoBehaviour
                   Debug.Log("Peso guardado correctamente");
               }
           });
+
+
+        Dictionary<string, object> perfil = new()
+        {
+            {"altura", int.Parse(altura.text)},
+            { "edad", int.Parse(edad.text)},
+            {"sexo", sexoGrupo.GetFirstActiveToggle().name},
+            {"actividad", actividadGrupo.GetFirstActiveToggle().name},
+            {"objetivo", objetivoGrupo.GetFirstActiveToggle().name}
+        };
+
+        db.Collection("users")
+        .Document(uid)
+        .Collection("perfil")
+        .Document("datos")
+        .SetAsync(perfil)
+        .ContinueWith(task=>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Error al guardar los datos de perfil " + task.Exception);
+            }
+            else
+            {
+                Debug.Log("Datos de perfil guardados correctamente");
+            }
+        });
+
     }
 }

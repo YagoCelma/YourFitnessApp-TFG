@@ -2011,8 +2011,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 921705298205756194}
-        m_TargetAssemblyTypeName: AgregarSerie, Assembly-CSharp
+      - m_Target: {fileID: 3822610925049492092}
+        m_TargetAssemblyTypeName: PanelEjercicio, Assembly-CSharp
         m_MethodName: EliminarSerie
         m_Mode: 1
         m_Arguments:
@@ -2050,6 +2050,7 @@ GameObject:
   - component: {fileID: 8716501949215193243}
   - component: {fileID: 361573025574896586}
   - component: {fileID: 3822610925049492092}
+  - component: {fileID: 957207838745906598}
   m_Layer: 5
   m_Name: Panel_Ejercicio
   m_TagString: Untagged
@@ -2079,8 +2080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 998.96826}
-  m_SizeDelta: {x: 1220, y: 700}
+  m_AnchoredPosition: {x: 0, y: 1002.5}
+  m_SizeDelta: {x: 1220, y: 707.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8188347989503722571
 CanvasRenderer:
@@ -2160,6 +2161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PanelEjercicio
   contenedorSeries: {fileID: 4686506109514684194}
   filaInputsPrefab: {fileID: 1891755151641295692}
+--- !u!114 &957207838745906598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048573042115856077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56230d9755aba4c43884d5764a82ca63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EjercicioItem
+  tituloEjercicio: {fileID: 7234486467166394069}
 --- !u!1 &8108699483645017437
 GameObject:
   m_ObjectHideFlags: 0

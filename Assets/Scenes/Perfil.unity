@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 160328453}
   - component: {fileID: 160328454}
   m_Layer: 5
-  m_Name: Toggle_Medio
+  m_Name: Medio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 460733436}
   - component: {fileID: 460733437}
   m_Layer: 5
-  m_Name: Toggle_Volumen
+  m_Name: Volumen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 507464884}
   - component: {fileID: 507464885}
   m_Layer: 5
-  m_Name: Toggle_Hombre
+  m_Name: Hombre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,7 +2917,7 @@ GameObject:
   - component: {fileID: 894565544}
   - component: {fileID: 894565545}
   m_Layer: 5
-  m_Name: Toggle_Bajo
+  m_Name: Bajo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3079,7 +3079,7 @@ GameObject:
   - component: {fileID: 1084441307}
   - component: {fileID: 1084441308}
   m_Layer: 5
-  m_Name: Toggle_Definicion
+  m_Name: Definicion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3302,7 +3302,7 @@ GameObject:
   - component: {fileID: 1126600584}
   - component: {fileID: 1126600585}
   m_Layer: 5
-  m_Name: Toggle_Mujer
+  m_Name: Mujer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4425,7 +4425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1363973925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4723,7 +4723,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 340.4961, y: 0}
+  m_SizeDelta: {x: 280.8999, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440275273
 MonoBehaviour:
@@ -5093,7 +5093,7 @@ GameObject:
   - component: {fileID: 1596059250}
   - component: {fileID: 1596059251}
   m_Layer: 5
-  m_Name: Toggle_Alto
+  m_Name: Alto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5180,7 +5180,7 @@ GameObject:
   - component: {fileID: 1601053919}
   - component: {fileID: 1601053920}
   m_Layer: 5
-  m_Name: Toggle_Mantenimiento
+  m_Name: Mantenimiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5679,15 +5679,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4586712502756187048, guid: cbac3fcff1e23e84d893a3f0473d53c8, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
