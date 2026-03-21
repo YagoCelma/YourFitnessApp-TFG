@@ -3,6 +3,8 @@ using Firebase.Firestore;
 using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PantallaRutinaController : MonoBehaviour
 {
@@ -71,4 +73,34 @@ public class PantallaRutinaController : MonoBehaviour
 
         item.Inicializar(nombre);
     }
+
+    public async void GuardarEntrenamiento()
+{
+    string uid = auth.CurrentUser.UserId;
+
+    string fecha = System.DateTime.Now.ToString("yyyy-MM-dd");
+
+    var ejercicios = contenedorEjercicios.GetComponentsInChildren<EjercicioItem>();
+
+    foreach (var ejercicio in ejercicios)
+    {
+        string nombre = ejercicio.ObtenerNombre();
+
+        var series = ejercicio.ObtenerSeries();
+
+        await db.Collection("users")
+        .Document(uid)
+        .Collection("entrenamientos")
+        .Document(fecha)
+        .Collection("ejercicios")
+        .Document(nombre)
+        .SetAsync(new Dictionary<string, object>
+        {
+            { "series", series }
+        });
+    }
+
+    Debug.Log("Entrenamiento guardado");
+    SceneManager.LoadScene(2);
+}
 }

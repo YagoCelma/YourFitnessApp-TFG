@@ -1,4 +1,7 @@
 ﻿<Solution>
+  <Project Path="XCharts.Runtime.csproj" />
+  <Project Path="XCharts.Editor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="XCharts.Examples.csproj" />
 </Solution>

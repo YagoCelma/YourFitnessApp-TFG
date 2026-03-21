@@ -2174,6 +2174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EjercicioItem
   tituloEjercicio: {fileID: 7234486467166394069}
+  contenedorSeries: {fileID: 4686506109514684194}
+  seriePrefab: {fileID: 827867310701668881, guid: 5a1660482d9196a44a4f6c8da4017d37, type: 3}
 --- !u!1 &8108699483645017437
 GameObject:
   m_ObjectHideFlags: 0

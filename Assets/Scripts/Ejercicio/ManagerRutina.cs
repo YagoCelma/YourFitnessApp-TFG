@@ -28,7 +28,7 @@ public class ManagerRutina : MonoBehaviour
 
     public void EliminarEjercicio()
     {
-        Destroy(panelEjercicioPrefab);
+        Destroy(gameObject);
     }
 
     public void BotonAtras()

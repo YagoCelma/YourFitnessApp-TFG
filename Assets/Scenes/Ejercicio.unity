@@ -202,9 +202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 789929751}
-        m_TargetAssemblyTypeName: ManagerRutina, Assembly-CSharp
-        m_MethodName: RegistrarEntrenamiento
+      - m_Target: {fileID: 789929754}
+        m_TargetAssemblyTypeName: PantallaRutinaController, Assembly-CSharp
+        m_MethodName: GuardarEntrenamiento
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 789929752}
-        m_TargetAssemblyTypeName: VolverPrincipal, Assembly-CSharp
-        m_MethodName: VolverMenuPrincipal
+      - m_Target: {fileID: 789929755}
+        m_TargetAssemblyTypeName: VolverListaRutinas, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -763,9 +763,9 @@ GameObject:
   m_Component:
   - component: {fileID: 789929750}
   - component: {fileID: 789929751}
-  - component: {fileID: 789929752}
   - component: {fileID: 789929753}
   - component: {fileID: 789929754}
+  - component: {fileID: 789929755}
   m_Layer: 0
   m_Name: '[Manager Ejercicio]'
   m_TagString: Untagged
@@ -802,18 +802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerRutina
   panelEjercicioPrefab: {fileID: 8048573042115856077, guid: 9b6e930eee32d7445958467cacac316a, type: 3}
   content: {fileID: 273292284}
---- !u!114 &789929752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789929748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b56c57e30cc0042aa5d2c650f62533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VolverPrincipal
 --- !u!114 &789929753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,6 +832,18 @@ MonoBehaviour:
   nombreRutinaTexto: {fileID: 1569607183}
   ejercicioPrefab: {fileID: 8048573042115856077, guid: 9b6e930eee32d7445958467cacac316a, type: 3}
   contenedorEjercicios: {fileID: 273292284}
+--- !u!114 &789929755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789929748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3c4f991c58c3e4ea61bbd6e5acba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolverListaRutinas
 --- !u!1 &830461567
 GameObject:
   m_ObjectHideFlags: 0
