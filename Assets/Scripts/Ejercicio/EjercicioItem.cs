@@ -25,28 +25,31 @@ public class EjercicioItem : MonoBehaviour
     }
 
     public List<Dictionary<string, int>> ObtenerSeries()
-{
-    List<Dictionary<string, int>> lista = new();
-
-    foreach (Transform serie in contenedorSeries)
     {
-        TMP_InputField[] inputs = serie.GetComponentsInChildren<TMP_InputField>();
+        List<Dictionary<string, int>> lista = new();
 
-        if (inputs.Length < 2) continue;
+        foreach (Transform serie in contenedorSeries)
+        {
+            TMP_InputField[] inputs = serie.GetComponentsInChildren<TMP_InputField>();
 
-        int kg = 0;
-        int reps = 0;
+            Debug.Log($"Input[1]: {inputs[1].text}");
+            Debug.Log($"Input[2]: {inputs[2].text}");
 
-        int.TryParse(inputs[1].text, out reps);
-        int.TryParse(inputs[0].text, out kg);
+            if (inputs.Length < 2) continue;
 
-        lista.Add(new Dictionary<string, int>
+            int kg = 0;
+            int reps = 0;
+
+            int.TryParse(inputs[1].text, out kg);  
+            int.TryParse(inputs[2].text, out reps);
+
+            lista.Add(new Dictionary<string, int>
         {
             { "kg", kg },
             { "reps", reps }
         });
-    }
+        }
 
-    return lista;
-}
+        return lista;
+    }
 }

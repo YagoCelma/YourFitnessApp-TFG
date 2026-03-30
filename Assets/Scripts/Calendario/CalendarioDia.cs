@@ -7,12 +7,12 @@ public class CalendarioDia : MonoBehaviour
     public TMP_Text numeroDia;
     public Image fondoDia;
 
-    public Color colorNormal = Color.white;
-    public Color colorEntrenado = Color.green;
-    public Color colorHoy = Color.blue;
+    private Color colorNormal = Color.white;
+    private Color colorEntrenado = new Color(0.337f, 0.706f, 0.353f);
+    private Color colorHoy = new Color(0.129f, 0.588f, 0.953f);
 
-    public Color colorTextoNormal = Color.black;
-    public Color colorTextoResaltado = Color.white;
+    private Color colorTextoNormal = Color.black;
+    private Color colorTextoResaltado = Color.white;
 
     public void Configurar(int dia, bool entrenado, bool esHoy)
     {

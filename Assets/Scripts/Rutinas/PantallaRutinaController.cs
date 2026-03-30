@@ -75,32 +75,42 @@ public class PantallaRutinaController : MonoBehaviour
     }
 
     public async void GuardarEntrenamiento()
-{
-    string uid = auth.CurrentUser.UserId;
-
-    string fecha = System.DateTime.Now.ToString("yyyy-MM-dd");
-
-    var ejercicios = contenedorEjercicios.GetComponentsInChildren<EjercicioItem>();
-
-    foreach (var ejercicio in ejercicios)
     {
-        string nombre = ejercicio.ObtenerNombre();
+        string uid = auth.CurrentUser.UserId;
+        string fecha = System.DateTime.Now.ToString("yyyy-MM-dd");
 
-        var series = ejercicio.ObtenerSeries();
+        var ejercicios = contenedorEjercicios.GetComponentsInChildren<EjercicioItem>();
 
-        await db.Collection("users")
-        .Document(uid)
-        .Collection("entrenamientos")
-        .Document(fecha)
-        .Collection("ejercicios")
-        .Document(nombre)
-        .SetAsync(new Dictionary<string, object>
+        foreach (var ejercicio in ejercicios)
         {
-            { "series", series }
-        });
-    }
+            string nombre = ejercicio.ObtenerNombre();
+            var series = ejercicio.ObtenerSeries();
 
-    Debug.Log("Entrenamiento guardado");
-    SceneManager.LoadScene(2);
-}
+            // Convertir a formato que Firebase entienda
+            var listaSeries = new List<object>();
+
+            foreach (var serie in series)
+            {
+                listaSeries.Add(new Dictionary<string, object>
+            {
+                { "kg", serie["kg"] },
+                { "reps", serie["reps"] }
+            });
+            }
+
+            await db.Collection("users")
+            .Document(uid)
+            .Collection("entrenamientos")
+            .Document(fecha)
+            .Collection("ejercicios")
+            .Document(nombre)
+            .SetAsync(new Dictionary<string, object>
+            {
+            { "series", listaSeries }
+            });
+        }
+
+        Debug.Log("Entrenamiento guardado");
+        SceneManager.LoadScene(2);
+    }
 }

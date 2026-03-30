@@ -11,17 +11,15 @@ public class CalendarioControlador : MonoBehaviour
     public Transform gridDias;
     public GameObject diaPrefab;
     public TMP_Text textoMes;
+    public TMP_Text numeroDiasEntrenados;
 
     DateTime fechaActual;
-
     HashSet<int> diasEntrenados = new HashSet<int>();
 
     async void Start()
     {
         fechaActual = DateTime.Now;
-
         await CargarEntrenamientos();
-
         GenerarCalendario();
     }
 
@@ -57,6 +55,8 @@ public class CalendarioControlador : MonoBehaviour
                 diasEntrenados.Add(fecha.Day);
             }
         }
+
+        ActualizarContador();
     }
 
     void GenerarCalendario()
@@ -80,7 +80,6 @@ public class CalendarioControlador : MonoBehaviour
         for (int dia = 1; dia <= diasMes; dia++)
         {
             GameObject nuevoDia = Instantiate(diaPrefab, gridDias);
-
             CalendarioDia cd = nuevoDia.GetComponent<CalendarioDia>();
 
             bool entrenado = diasEntrenados.Contains(dia);
@@ -94,21 +93,22 @@ public class CalendarioControlador : MonoBehaviour
         }
     }
 
+    void ActualizarContador()
+    {
+        numeroDiasEntrenados.text = diasEntrenados.Count.ToString();
+    }
+
     public async void MesSiguiente()
     {
         fechaActual = fechaActual.AddMonths(1);
-
         await CargarEntrenamientos();
-
         GenerarCalendario();
     }
 
     public async void MesAnterior()
     {
         fechaActual = fechaActual.AddMonths(-1);
-
         await CargarEntrenamientos();
-
         GenerarCalendario();
     }
 }
