@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HacerRutina.unity
     guid: 126c07f82d62395439a356825241bb88
+  - enabled: 1
+    path: Assets/Scenes/Ajustes.unity
+    guid: c7bbd08b45f3c214ba0855b04f2be356
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

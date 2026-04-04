@@ -92,7 +92,7 @@ public class Registro : MonoBehaviour
                 string uid = FirebaseManager.Auth.CurrentUser.UserId;
 
                 FirebaseManager.DB
-                    .Collection("usuarios")
+                    .Collection("users")
                     .Document(uid)
                     .SetAsync(new
                     {

@@ -1,66 +1,158 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class GraficaManual : MonoBehaviour
 {
     [Header("Configuración Visual")]
-    public RectTransform contenedor; // Arrastra el mismo objeto que tiene este script
-    public GameObject puntoPrefab;   // El prefab del circulito que haremos ahora
-    public Color colorLinea = new Color(1f, 0.4f, 0f, 1f); // Naranja Gym
+    public RectTransform contenedor;
+    public GameObject puntoPrefab;
+    public Color colorLinea = new Color(1f, 0.4f, 0f, 1f);
+    public Color colorEjes = new Color(0.5f, 0.5f, 0.5f, 0.3f);
     public float grosorLinea = 4f;
+    public float grosorEje = 2f;
 
-    public void Dibujar(List<float> pesos)
+    [Header("Etiquetas")]
+    public TextMeshProUGUI prefabEtiqueta;
+
+    private float minPeso;
+    private float maxPeso;
+    private List<float> pesos;
+    private List<DateTime> fechas;
+    private List<GameObject> puntos = new List<GameObject>();
+    private TextMeshProUGUI etiquetaActual;
+
+    public void Dibujar(List<float> pesosList, List<DateTime> fechasRegistro = null)
     {
-        // 1. Limpiar puntos anteriores
-        foreach (Transform child in contenedor) {
-            if (child.name != "Fondo") Destroy(child.gameObject);
+        foreach (Transform child in contenedor)
+        {
+            if (child.name != "Fondo" && child.name != "EjeX" && child.name != "EjeY" && child.name != "Etiqueta")
+                Destroy(child.gameObject);
         }
 
-        if (pesos == null || pesos.Count < 2) return;
+        puntos.Clear();
 
-        // 2. Cálculos de escala
-        float anchoTotal = contenedor.rect.width;
-        float altoTotal = contenedor.rect.height;
-        
-        // Ajustamos el rango para que no toque los bordes (margen de 5kg)
-        float minPeso = pesos.Min() - 5;
-        float maxPeso = pesos.Max() + 5;
+        if (pesosList == null || pesosList.Count < 2) return;
+
+        float anchoTotalContenedor = contenedor.rect.width;
+        float altoTotalContenedor = contenedor.rect.height;
+
+        float paddingIzquierda = 50f;
+        float paddingDerecha = 50f;
+        float paddingArriba = 40f;
+        float paddingAbajo = 40f;
+
+        float anchoTotal = anchoTotalContenedor - paddingIzquierda - paddingDerecha;
+        float altoTotal = altoTotalContenedor - paddingArriba - paddingAbajo;
+
+        float offsetX = paddingIzquierda;
+        float offsetY = paddingAbajo;
+
+        pesos = pesosList;
+        minPeso = pesos.Min() - 5;
+        maxPeso = pesos.Max() + 5;
         float rangoPeso = maxPeso - minPeso;
+
+        fechas = fechasRegistro ?? new List<DateTime>();
+
+        DibujarEjes(anchoTotal, altoTotal, offsetX, offsetY);
 
         Vector2 ultimoPuntoPos = Vector2.zero;
 
-        // 3. Dibujar
         for (int i = 0; i < pesos.Count; i++)
         {
-            // Calculamos posición X (repartida en el ancho) e Y (proporcional al peso)
-            float xPos = (i / (float)(pesos.Count - 1)) * anchoTotal;
-            float yPos = ((pesos[i] - minPeso) / rangoPeso) * altoTotal;
+            float xPos = offsetX + (i / (float)(pesos.Count - 1)) * anchoTotal;
+            float yPos = offsetY + ((pesos[i] - minPeso) / rangoPeso) * altoTotal;
             Vector2 posicionActual = new Vector2(xPos, yPos);
 
-            // Crear conexión (línea)
             if (i > 0)
             {
                 CrearLinea(ultimoPuntoPos, posicionActual);
             }
 
-            // Crear el punto encima
-            CrearPunto(posicionActual);
+            GameObject punto = CrearPunto(posicionActual, i);
+            puntos.Add(punto);
 
             ultimoPuntoPos = posicionActual;
         }
     }
 
-    void CrearPunto(Vector2 pos)
+    private GameObject CrearPunto(Vector2 pos, int indice)
     {
         GameObject dot = Instantiate(puntoPrefab, contenedor);
         RectTransform rt = dot.GetComponent<RectTransform>();
         rt.anchoredPosition = pos;
-        rt.anchorMin = rt.anchorMax = Vector2.zero; // Importante para posicionamiento manual
+        rt.anchorMin = rt.anchorMax = Vector2.zero;
+
+        Button btn = dot.GetComponent<Button>();
+        if (btn == null) btn = dot.AddComponent<Button>();
+
+        int indiceLocal = indice;
+        btn.onClick.AddListener(() => MostrarEtiqueta(pos, indiceLocal));
+
+        return dot;
     }
 
-    void CrearLinea(Vector2 start, Vector2 end)
+    private void MostrarEtiqueta(Vector2 pos, int indice)
+    {
+        if (etiquetaActual != null)
+            Destroy(etiquetaActual.gameObject);
+
+        TextMeshProUGUI etiqueta = Instantiate(prefabEtiqueta, contenedor);
+        etiqueta.name = "Etiqueta";
+
+        string texto = pesos[indice].ToString("F1") + " kg";
+        if (indice < fechas.Count && fechas[indice] != default)
+        {
+            texto += "\n" + fechas[indice].ToString("dd/MM");
+        }
+
+        etiqueta.text = texto;
+        etiqueta.fontSize = 30;
+        etiqueta.alignment = TextAlignmentOptions.Bottom;
+        etiqueta.color = new Color(255f, 255f, 255f, 255f);
+
+        RectTransform rt = etiqueta.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.zero;
+        rt.pivot = new Vector2(0.5f, 0f);
+
+        rt.anchoredPosition = new Vector2(pos.x, pos.y + 25);
+        rt.sizeDelta = new Vector2(100, 40);
+
+        etiquetaActual = etiqueta;
+    }
+
+    private void DibujarEjes(float anchoTotal, float altoTotal, float offsetX, float offsetY)
+    {
+        GameObject ejeYGO = new GameObject("EjeY", typeof(Image));
+        ejeYGO.transform.SetParent(contenedor, false);
+        Image ejeYImg = ejeYGO.GetComponent<Image>();
+        ejeYImg.color = colorEjes;
+        ejeYImg.raycastTarget = false;
+
+        RectTransform ejeYRT = ejeYGO.GetComponent<RectTransform>();
+        ejeYRT.anchorMin = ejeYRT.anchorMax = Vector2.zero;
+        ejeYRT.sizeDelta = new Vector2(grosorEje, altoTotal);
+        ejeYRT.anchoredPosition = new Vector2(offsetX, offsetY + altoTotal * 0.5f);
+
+        // Eje X (horizontal)
+        GameObject ejeXGO = new GameObject("EjeX", typeof(Image));
+        ejeXGO.transform.SetParent(contenedor, false);
+        Image ejeXImg = ejeXGO.GetComponent<Image>();
+        ejeXImg.color = colorEjes;
+        ejeXImg.raycastTarget = false;
+
+        RectTransform ejeXRT = ejeXGO.GetComponent<RectTransform>();
+        ejeXRT.anchorMin = ejeXRT.anchorMax = Vector2.zero;
+        ejeXRT.sizeDelta = new Vector2(anchoTotal, grosorEje);
+        ejeXRT.anchoredPosition = new Vector2(offsetX + anchoTotal * 0.5f, offsetY);
+    }
+
+    private void CrearLinea(Vector2 start, Vector2 end)
     {
         GameObject lineaGO = new GameObject("SegmentoLinea", typeof(Image));
         lineaGO.transform.SetParent(contenedor, false);

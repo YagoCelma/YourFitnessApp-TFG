@@ -32,4 +32,9 @@ public class GestorPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene(10);
     }
+
+    public void Ajustes()
+    {
+        SceneManager.LoadScene(12);
+    }
 }

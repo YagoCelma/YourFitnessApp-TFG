@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using Firebase.Firestore;
 using Firebase.Auth;
 using System.Linq;
+using System;
 
 public class ProgresoManager : MonoBehaviour
 {
-    public GraficaManual miGrafica; // Referencia al script de arriba
+    public GraficaManual miGrafica;
     public TMPro.TMP_Text txtMax, txtMin, txtAvg;
 
-    void OnEnable()
+    private void OnEnable()
     {
         CargarDatosPeso();
     }
@@ -26,22 +27,26 @@ public class ProgresoManager : MonoBehaviour
               if (task.IsFaulted) return;
 
               List<float> pesos = new List<float>();
+              List<DateTime> fechas = new List<DateTime>();  // ✅ NUEVO
 
               foreach (DocumentSnapshot doc in task.Result.Documents)
               {
                   float p = float.Parse(doc.GetValue<object>("peso").ToString());
                   pesos.Add(p);
+
+                  // ✅ Extraer la fecha
+                  Timestamp timestamp = doc.GetValue<Timestamp>("timestamp");
+                  fechas.Add(timestamp.ToDateTime());
               }
 
-              // Usamos el Dispatcher para volver al hilo principal
               UnityMainThreadDispatcher.Instance().Enqueue(() => {
                   ActualizarEstadisticas(pesos);
-                  miGrafica.Dibujar(pesos);
+                  miGrafica.Dibujar(pesos, fechas);  // ✅ Pasar fechas
               });
           });
     }
 
-    void ActualizarEstadisticas(List<float> pesos)
+    private void ActualizarEstadisticas(List<float> pesos)
     {
         if (pesos.Count == 0) return;
         txtMax.text = pesos.Max().ToString("F1") + " kg";
