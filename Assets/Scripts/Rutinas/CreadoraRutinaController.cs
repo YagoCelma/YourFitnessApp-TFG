@@ -3,9 +3,13 @@ using Firebase.Firestore;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using Firebase.Extensions;
 
 public class CreadoraRutinaController : MonoBehaviour
 {
+    [Header("UI ejercicios")]
+    public GameObject ejercicioPrefab;
+    public Transform contenedorEjercicios;
     public TMP_InputField nombreRutinaInput;
 
     FirebaseFirestore db;
@@ -19,6 +23,7 @@ public class CreadoraRutinaController : MonoBehaviour
         if (!string.IsNullOrEmpty(RutinaSeleccionada.rutinaId))
         {
             CargarRutina();
+            CargarEjercicios();
         }
     }
 
@@ -79,5 +84,42 @@ public class CreadoraRutinaController : MonoBehaviour
 
             Debug.Log("Rutina actualizada");
         }
+    }
+    public void AgregarNuevoEjercicioVacio()
+    {
+        Instantiate(ejercicioPrefab, contenedorEjercicios);
+    }
+
+    void CargarEjercicios()
+    {
+        string uid = auth.CurrentUser.UserId;
+
+        db.Collection("users")
+        .Document(uid)
+        .Collection("rutinas")
+        .Document(RutinaSeleccionada.rutinaId)
+        .Collection("ejercicios")
+        .GetSnapshotAsync()
+        .ContinueWithOnMainThread(task =>
+        {
+            foreach (var doc in task.Result.Documents)
+            {
+                string nombre = doc.GetValue<string>("nombre");
+                int peso = doc.GetValue<int>("peso");
+                int reps = doc.GetValue<int>("reps");
+                int series = doc.GetValue<int>("series");
+
+                CrearEjercicio(nombre, peso, reps, series);
+            }
+        });
+    }
+
+    void CrearEjercicio(string nombre, int peso, int reps, int series)
+    {
+        GameObject nuevo = Instantiate(ejercicioPrefab, contenedorEjercicios);
+
+        EjercicioUI ejercicio = nuevo.GetComponent<EjercicioUI>();
+
+        ejercicio.Configurar(nombre, peso, reps, series);
     }
 }

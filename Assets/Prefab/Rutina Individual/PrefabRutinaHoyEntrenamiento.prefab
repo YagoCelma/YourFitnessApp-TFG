@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 2473096848229868882}
   - component: {fileID: 3869651250849651939}
   m_Layer: 5
-  m_Name: PrefabRutinaHoy
+  m_Name: PrefabRutinaHoyEntrenamiento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3869651250849651939}
         m_TargetAssemblyTypeName: RutinaItem, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: OnClickEjercicio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

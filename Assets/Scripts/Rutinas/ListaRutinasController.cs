@@ -2,6 +2,7 @@ using Firebase.Auth;
 using Firebase.Extensions;
 using Firebase.Firestore;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ListaRutinasController : MonoBehaviour
 {
@@ -58,5 +59,12 @@ public class ListaRutinasController : MonoBehaviour
         RutinaItem rutinaItem = item.GetComponent<RutinaItem>();
 
         rutinaItem.Iniciar(rutinaId, nombre);
+    }
+
+    public void ClickNuevaRutina()
+    {
+        RutinaSeleccionada.rutinaId = "";
+
+        SceneManager.LoadScene("NombreDeTuEscenaCreadora");
     }
 }

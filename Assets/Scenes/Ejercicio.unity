@@ -762,8 +762,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789929750}
-  - component: {fileID: 789929751}
-  - component: {fileID: 789929753}
   - component: {fileID: 789929754}
   - component: {fileID: 789929755}
   m_Layer: 0
@@ -788,35 +786,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &789929751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789929748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 557d0a852fec6654ba2ede1af927e11d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManagerRutina
-  panelEjercicioPrefab: {fileID: 8048573042115856077, guid: 9b6e930eee32d7445958467cacac316a, type: 3}
-  content: {fileID: 273292284}
---- !u!114 &789929753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789929748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2deca19876049904faceafe2497a670d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RutinaDetalleController
-  nombreRutinaTexto: {fileID: 1569607183}
-  ejercicioPrefab: {fileID: 8048573042115856077, guid: 9b6e930eee32d7445958467cacac316a, type: 3}
-  contenedorEjercicios: {fileID: 273292284}
 --- !u!114 &789929754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,7 +1683,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 789929751}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ManagerRutina, Assembly-CSharp
         m_MethodName: AgregarEjercicio
         m_Mode: 1

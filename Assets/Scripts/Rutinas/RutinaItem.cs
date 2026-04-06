@@ -18,10 +18,15 @@ public class RutinaItem : MonoBehaviour
             nombreRutina.text = nombre;
     }
 
-    public void OnClick()
+    public void OnClickEjercicio()
     {
         RutinaSeleccionada.rutinaId = rutinaId;
         SceneManager.LoadScene(3);
+    }
+    public void OnClick()
+    {
+        RutinaSeleccionada.rutinaId = rutinaId;
+        SceneManager.LoadScene(9);
     }
 
     public async void BorrarRutina()

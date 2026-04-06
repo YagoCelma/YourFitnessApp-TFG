@@ -105,6 +105,8 @@ public class Registro : MonoBehaviour
 
                 Debug.Log("Usuario registrado correctamente");
             });
+
+            SceneManager.LoadScene(2);
     }
 
     public void VolverAtras()

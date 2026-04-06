@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f24f13024b3d384283cad6ddb13b8ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ListaRutinasController
-  rutinaPrefab: {fileID: 6038305980276732066, guid: 36e8909ca7870034caaff83af708cb89, type: 3}
+  rutinaPrefab: {fileID: 6038305980276732066, guid: f73e615c8a763564bb76622dcd43f427, type: 3}
   contenedoresRutinas: {fileID: 1771370872}
 --- !u!1 &1689087858
 GameObject:

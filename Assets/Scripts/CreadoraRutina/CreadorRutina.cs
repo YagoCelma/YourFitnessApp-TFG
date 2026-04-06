@@ -22,7 +22,6 @@ public class CreadorRutina : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         db = FirebaseFirestore.DefaultInstance;
 
-        //Si existe una rutina seleccionada, cargamos sus ejercicios
         if (!string.IsNullOrEmpty(RutinaSeleccionada.rutinaId))
         {
             CargarNombreRutina();
@@ -49,7 +48,6 @@ public class CreadorRutina : MonoBehaviour
 
         DocumentReference rutinaRef;
 
-        //Si no existe la rutina la crea
         if (string.IsNullOrEmpty(RutinaSeleccionada.rutinaId))
         {
             rutinaRef = db
@@ -60,7 +58,6 @@ public class CreadorRutina : MonoBehaviour
 
             RutinaSeleccionada.rutinaId = rutinaRef.Id;
         }
-        //Si ya existe la rutina la usa
         else
         {
             rutinaRef = db
@@ -70,17 +67,14 @@ public class CreadorRutina : MonoBehaviour
                 .Document(RutinaSeleccionada.rutinaId);
         }
 
-        //Datos de la rutina
         Dictionary<string, object> datosRutina = new()
         {
             { "nombre", nombreRutina },
             { "creadoDia", Timestamp.GetCurrentTimestamp() }
         };
 
-        //Guardar o actualizar rutina
         await rutinaRef.SetAsync(datosRutina);
 
-        //Borra los ejercicios viejos
         QuerySnapshot ejerciciosViejos = await rutinaRef.Collection("ejercicios").GetSnapshotAsync();
 
         foreach (DocumentSnapshot doc in ejerciciosViejos.Documents)
@@ -88,7 +82,6 @@ public class CreadorRutina : MonoBehaviour
             await doc.Reference.DeleteAsync();
         }
 
-        //Guardar ejercicios nuevos
         foreach (Transform hijo in contenedorEjercicios)
         {
             TMP_InputField input = hijo.GetComponentInChildren<TMP_InputField>();
@@ -177,7 +170,6 @@ public class CreadorRutina : MonoBehaviour
 
                   nombreRutinaInput.text = nombre;
 
-                  // Fuerza refresco visual del InputField
                   nombreRutinaInput.ForceLabelUpdate();
               }
           });

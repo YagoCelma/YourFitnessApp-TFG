@@ -2,5 +2,5 @@ using UnityEngine;
 
 public static class RutinaSeleccionada
 {
-    public static string rutinaId;
+    public static string rutinaId = "";
 }
