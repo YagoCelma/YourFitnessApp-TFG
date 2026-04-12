@@ -8,7 +8,7 @@ public class Login : MonoBehaviour
 
     public TMP_InputField correoInput;
     public TMP_InputField contrasenhaInput;
-    public PopupAdvertencia popup;
+    public TextMeshProUGUI mensajeError;
 
     /*void Start()
     {
@@ -29,7 +29,7 @@ public class Login : MonoBehaviour
         {
 
             Debug.Log("Error: Correo o contraseña vacios");
-            popup.Mostrar("Error", "Correo o contraseña vacios");
+            mensajeError.text = "Error: Correo o contraseña vacios";
             return;
         }
 
@@ -40,7 +40,7 @@ public class Login : MonoBehaviour
                 if (!task.IsCompletedSuccessfully)
                 {
                     Debug.Log("Correo o contraseña incorrectos");
-                    popup.Mostrar("Error", "Correo o contraseña incorrectos");
+                    mensajeError.text = "Error: Correo o contraseña incorrectos";
                     return;
                 }
 

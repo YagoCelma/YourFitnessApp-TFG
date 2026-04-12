@@ -14,7 +14,7 @@ public class Registro : MonoBehaviour
     public TMP_InputField correoInput;
     public TMP_InputField contrasenhaInput;
     public TMP_InputField confirmarContrasenhaInput;
-    public PopupAdvertencia popup;
+    public TextMeshProUGUI mensajeError;
 
 
     public void RegistrarUsuario()
@@ -32,7 +32,7 @@ public class Registro : MonoBehaviour
         if (contrasenha != confirmarContrasenha)
         {
             Debug.LogError("Las contraseñas no coinciden");
-            popup.Mostrar("Error", "Las contraseñas no coinciden");
+            mensajeError.text = "Error: Las contraseñas no coinciden";
             return;
         }
 
@@ -40,14 +40,14 @@ public class Registro : MonoBehaviour
                 || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(confirmarContrasenha))
         {
             Debug.LogError("Ningun campo puede estar vacio");
-            popup.Mostrar("Error", "Ningun campo puede estar vacio");
+            mensajeError.text = "Error: Ningun campo puede estar vacio";
             return;
         }
 
         if (contrasenha.Length < 8)
         {
             Debug.LogError("Error la contraseña debe contener un minimo de 8 caracteres");
-            popup.Mostrar("Error", "La contraseña debe tener minimo 8 caracteres");
+            mensajeError.text = "Error: La contraseña debe tener minimo 8 caracteres";
             return;
         }
 
@@ -66,7 +66,7 @@ public class Registro : MonoBehaviour
         if (!mayusculas || !minusculas)
         {
             Debug.Log("La contraseña debe contener mayusculas y minusculas");
-            popup.Mostrar("Error", "La contraseña debe contener mayusculas y minusculas");
+            mensajeError.text = "Error: La contraseña debe contener mayusculas y minusculas";
             return;
 
         }
@@ -74,7 +74,7 @@ public class Registro : MonoBehaviour
         if (!numero)
         {
             Debug.Log("La conraseña debe tener valores numericos");
-            popup.Mostrar("Error", "La conraseña debe tener valores numericos");
+            mensajeError.text = "Error: La conraseña debe tener valores numericos";
             return;
         }
 
