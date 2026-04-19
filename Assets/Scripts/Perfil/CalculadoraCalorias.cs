@@ -14,7 +14,7 @@ public class CalculadoraCalorias : MonoBehaviour
     public ToggleGroup sexoGrupo;
     public ToggleGroup actividadGrupo;
     public ToggleGroup objetivoGrupo;
-    //public PopupAdvertencia popup;
+    public TextMeshProUGUI mensajeError;
     public TextMeshProUGUI caloriasTexto;
     public TextMeshProUGUI caloriasBasalesTexto;
     
@@ -29,6 +29,12 @@ public class CalculadoraCalorias : MonoBehaviour
 
     public void calcularTodo()
     {
+        if (altura == null || peso == null || edad == null || sexoGrupo == null || actividadGrupo == null || objetivoGrupo == null)
+        {
+            mensajeError.text = "Error: No puede haber ningun campo vacio";
+            return;
+        }
+        
         double caloriasBasales = calcularCaloriasBasalesSexo();
 
         double caloriasActividad = calcularCaloriasActividad(caloriasBasales);
@@ -71,7 +77,7 @@ public class CalculadoraCalorias : MonoBehaviour
         }
         else
         {
-            //popup.Mostrar("Error", "No se ha seleccionado ningun nivel de actividad");
+            mensajeError.text = "Error: No se ha seleccionado el sexo";
             return 0;
         }
 
@@ -95,7 +101,7 @@ public class CalculadoraCalorias : MonoBehaviour
         }
         else
         {
-            //popup.Mostrar("Error", "No se ha seleccionado ningun nivel de actividad");
+            mensajeError.text = "Error: No se ha seleccionado ningun nivel de actividad";
             return 0;
         }
         
@@ -118,7 +124,7 @@ public class CalculadoraCalorias : MonoBehaviour
         }
         else
         {
-            //popup.Mostrar("Error", "No se ha seleccionado ningun objetivo");
+            mensajeError.text ="Error: No se ha seleccionado ningun objetivo";
             return 0;
         }
     }
@@ -163,6 +169,7 @@ public class CalculadoraCalorias : MonoBehaviour
               if (task.IsFaulted)
               {
                   Debug.LogError("Error al guardar peso: " + task.Exception);
+                  mensajeError.text = "Error: No se ha podido guardar el peso";
               }
               else
               {
