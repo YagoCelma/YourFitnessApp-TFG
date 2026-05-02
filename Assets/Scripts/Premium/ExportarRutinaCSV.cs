@@ -22,60 +22,59 @@ public class ExportarPremium : MonoBehaviour
     {
         if (auth.CurrentUser == null) return;
 
-        Debug.Log("Iniciando exportación con formato personalizado...");
+        Debug.Log("Iniciando exportación con estructura de Arrays...");
         string uid = auth.CurrentUser.UserId;
         StringBuilder csvContent = new StringBuilder();
         
-        csvContent.AppendLine("Fecha;Rutina;Ejercicio;Serie;Peso (kg);Reps");
+        csvContent.AppendLine("Fecha;Rutina;Ejercicio;Series Totales;Detalle (Peso x Reps)");
 
         try
         {
+            //ruta de la query
             QuerySnapshot entrenamientosSnapshot = await db.Collection("users").Document(uid)
                 .Collection("entrenamientos").GetSnapshotAsync();
 
-            foreach (DocumentSnapshot entrenamientoDoc in entrenamientosSnapshot.Documents)
+            foreach (DocumentSnapshot entDoc in entrenamientosSnapshot.Documents)
             {
-                string fecha = entrenamientoDoc.Id;  // La fecha es el ID del documento
+                string fecha = entDoc.Id;
+                
+                string nombreRutina = entDoc.ContainsField("nombre") ? entDoc.GetValue<string>("nombre") : "Entrenamiento";
 
-                QuerySnapshot ejerciciosSnapshot = await db.Collection("users").Document(uid)
-                    .Collection("entrenamientos").Document(fecha)
-                    .Collection("ejercicios").GetSnapshotAsync();
+                QuerySnapshot ejerciciosSnapshot = await entDoc.Reference.Collection("ejercicios").GetSnapshotAsync();
 
                 foreach (DocumentSnapshot ejerDoc in ejerciciosSnapshot.Documents)
                 {
-                    string nombreEjer = ejerDoc.Id; 
+                    string nombreEjer = ejerDoc.Id;
 
-                    try
+                    int totalSeries = 0;
+                    string detallePesoReps = "0x0";
+
+                    if (ejerDoc.ContainsField("series"))
                     {
-                        List<object> seriesList = ejerDoc.GetValue<List<object>>("series");
+                        List<object> listaSeries = ejerDoc.GetValue<List<object>>("series");
+                        totalSeries = listaSeries.Count;
 
-                        if (seriesList != null && seriesList.Count > 0)
+                        List<string> setsCompletos = new List<string>();
+
+                        foreach (object item in listaSeries)
                         {
-                            int numeroSerie = 1;
-                            foreach (object serie in seriesList)
+                            Dictionary<string, object> setDatos = item as Dictionary<string, object>;
+                            if (setDatos != null)
                             {
-                                var serieDic = serie as Dictionary<string, object>;
-                                if (serieDic != null)
-                                {
-                                    int kg = 0;
-                                    int reps = 0;
+                                long kg = setDatos.ContainsKey("kg") ? (long)setDatos["kg"] : 0;
+                                long reps = setDatos.ContainsKey("reps") ? (long)setDatos["reps"] : 0;
 
-                                    if (serieDic.ContainsKey("kg"))
-                                        int.TryParse(serieDic["kg"].ToString(), out kg);
-                                    if (serieDic.ContainsKey("reps"))
-                                        int.TryParse(serieDic["reps"].ToString(), out reps);
-
-                                    // Añadir fila al CSV
-                                    csvContent.AppendLine($"{fecha};{nombreEjer};{nombreEjer};{numeroSerie};{reps};{kg}");
-                                    numeroSerie++;
-                                }
+                                setsCompletos.Add($"{kg}x{reps}");
                             }
                         }
+
+                        if (setsCompletos.Count > 0)
+                        {
+                            detallePesoReps = string.Join(" / ", setsCompletos);
+                        }
                     }
-                    catch (System.Exception e)
-                    {
-                        Debug.LogWarning($"Error procesando {nombreEjer}: {e.Message}");
-                    }
+
+                    csvContent.AppendLine($"{fecha};{nombreRutina};{nombreEjer};{totalSeries};{detallePesoReps}");
                 }
             }
 
@@ -93,7 +92,7 @@ public class ExportarPremium : MonoBehaviour
         string ruta = Path.Combine(Application.persistentDataPath, nombreArchivo);
 
         File.WriteAllText(ruta, contenidoCompleto, Encoding.UTF8);
-        Debug.Log($"<color=gold>¡Hecho! Archivo guardado en: {ruta}</color>");
+        Debug.Log($"<color=green>¡Éxito! CSV guardado en: {ruta}</color>");
 
         #if UNITY_EDITOR || UNITY_STANDALONE_WIN
             System.Diagnostics.Process.Start("explorer.exe", "/select," + ruta.Replace("/", "\\"));
