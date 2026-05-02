@@ -2190,6 +2190,7 @@ GameObject:
   - component: {fileID: 9211404879369888057}
   - component: {fileID: 1385939114450000502}
   - component: {fileID: 9109631798952069713}
+  - component: {fileID: 4206813959525507271}
   m_Layer: 5
   m_Name: BTN_AgregarSerie
   m_TagString: Untagged
@@ -2299,7 +2300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3822610925049492092}
+      - m_Target: {fileID: 4206813959525507271}
         m_TargetAssemblyTypeName: PanelEjercicio, Assembly-CSharp
         m_MethodName: AgregarSerie
         m_Mode: 1
@@ -2345,6 +2346,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AgregarSerie
   filaPrefab: {fileID: 1891755151641295692}
   contenedorSeries: {fileID: 4686506109514684194}
+--- !u!114 &4206813959525507271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108699483645017437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e20eeede691e0944a2a81272eb3e143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelEjercicio
+  contenedorSeries: {fileID: 4686506109514684194}
+  filaInputsPrefab: {fileID: 827867310701668881, guid: 5a1660482d9196a44a4f6c8da4017d37, type: 3}
 --- !u!1 &8551282534576193711
 GameObject:
   m_ObjectHideFlags: 0
