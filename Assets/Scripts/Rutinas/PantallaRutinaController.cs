@@ -75,42 +75,39 @@ public class PantallaRutinaController : MonoBehaviour
     }
 
     public async void GuardarEntrenamiento()
+{
+    string uid = auth.CurrentUser.UserId;
+    string fecha = System.DateTime.Now.ToString("yyyy-MM-dd");
+
+    DocumentReference docFecha = db.Collection("users").Document(uid).Collection("entrenamientos").Document(fecha);
+
+    await docFecha.SetAsync(new Dictionary<string, object> { { "completado", true } }, SetOptions.MergeAll);
+
+    var ejercicios = contenedorEjercicios.GetComponentsInChildren<EjercicioItem>();
+
+    foreach (var ejercicio in ejercicios)
     {
-        string uid = auth.CurrentUser.UserId;
-        string fecha = System.DateTime.Now.ToString("yyyy-MM-dd");
+        string nombre = ejercicio.ObtenerNombre();
+        var series = ejercicio.ObtenerSeries();
 
-        var ejercicios = contenedorEjercicios.GetComponentsInChildren<EjercicioItem>();
+        var listaSeries = new List<object>();
 
-        foreach (var ejercicio in ejercicios)
+        foreach (var serie in series)
         {
-            string nombre = ejercicio.ObtenerNombre();
-            var series = ejercicio.ObtenerSeries();
-
-            // Convertir a formato que Firebase entienda
-            var listaSeries = new List<object>();
-
-            foreach (var serie in series)
-            {
-                listaSeries.Add(new Dictionary<string, object>
+            listaSeries.Add(new Dictionary<string, object>
             {
                 { "kg", serie["kg"] },
                 { "reps", serie["reps"] }
             });
-            }
-
-            await db.Collection("users")
-            .Document(uid)
-            .Collection("entrenamientos")
-            .Document(fecha)
-            .Collection("ejercicios")
-            .Document(nombre)
-            .SetAsync(new Dictionary<string, object>
-            {
-            { "series", listaSeries }
-            });
         }
 
-        Debug.Log("Entrenamiento guardado");
-        SceneManager.LoadScene(2);
+        await docFecha.Collection("ejercicios").Document(nombre).SetAsync(new Dictionary<string, object>
+        {
+            { "series", listaSeries }
+        });
     }
+
+    Debug.Log("Entrenamiento guardado con éxito. ¡Adiós documentos fantasma!");
+    SceneManager.LoadScene(2);
+}
 }
