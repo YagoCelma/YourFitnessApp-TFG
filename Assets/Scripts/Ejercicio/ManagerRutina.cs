@@ -17,13 +17,11 @@ public class ManagerRutina : MonoBehaviour
 
     public void AgregarEjercicio()
     {
+        GameObject nuevoEjercicio = Instantiate(panelEjercicioPrefab, content, false);
 
-        GameObject nuevoEjercicio = Instantiate(panelEjercicioPrefab, content);
+        nuevoEjercicio.transform.SetAsLastSibling();
 
-        // Forzar refresco de layout (CLAVE)
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)content);
-        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)content.parent);
-        Canvas.ForceUpdateCanvases();
     }
 
     public void EliminarEjercicio()

@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 789929754}
   - component: {fileID: 789929755}
   - component: {fileID: 789929756}
+  - component: {fileID: 789929757}
   m_Layer: 0
   m_Name: '[Manager Ejercicio]'
   m_TagString: Untagged
@@ -1125,6 +1126,20 @@ MonoBehaviour:
   textoUltimoEntrenamiento: {fileID: 605162846}
   botonVerDetalles: {fileID: 1994993391}
   panelDetalles: {fileID: 1748035281}
+--- !u!114 &789929757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789929748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557d0a852fec6654ba2ede1af927e11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManagerRutina
+  panelEjercicioPrefab: {fileID: 8048573042115856077, guid: df9f55e46c2411246853cf4f26b066fa, type: 3}
+  content: {fileID: 273292284}
 --- !u!1 &797987177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,7 +2758,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 789929757}
         m_TargetAssemblyTypeName: ManagerRutina, Assembly-CSharp
         m_MethodName: AgregarEjercicio
         m_Mode: 1

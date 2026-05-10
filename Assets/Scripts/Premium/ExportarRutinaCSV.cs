@@ -7,7 +7,7 @@ using Firebase.Extensions;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-public class ExportarPremium : MonoBehaviour
+public class ExportarRutinaCSV : MonoBehaviour
 {
     FirebaseAuth auth;
     FirebaseFirestore db;
@@ -26,7 +26,8 @@ public class ExportarPremium : MonoBehaviour
         string uid = auth.CurrentUser.UserId;
         StringBuilder csvContent = new StringBuilder();
         
-        csvContent.AppendLine("Fecha;Rutina;Ejercicio;Series Totales;Detalle (Peso x Reps)");
+        // 1. Cabecera actualizada: Quitamos "Series Totales"
+        csvContent.AppendLine("Fecha;Rutina;Ejercicio;Detalle (Peso x Reps)");
 
         try
         {
@@ -38,7 +39,7 @@ public class ExportarPremium : MonoBehaviour
             {
                 string fecha = entDoc.Id;
                 
-                string nombreRutina = entDoc.ContainsField("nombre") ? entDoc.GetValue<string>("nombre") : "Entrenamiento";
+                string nombreRutina = entDoc.ContainsField("nombreRutina") ? entDoc.GetValue<string>("nombreRutina") : "Entrenamiento";
 
                 QuerySnapshot ejerciciosSnapshot = await entDoc.Reference.Collection("ejercicios").GetSnapshotAsync();
 
@@ -46,13 +47,11 @@ public class ExportarPremium : MonoBehaviour
                 {
                     string nombreEjer = ejerDoc.Id;
 
-                    int totalSeries = 0;
                     string detallePesoReps = "0x0";
 
                     if (ejerDoc.ContainsField("series"))
                     {
                         List<object> listaSeries = ejerDoc.GetValue<List<object>>("series");
-                        totalSeries = listaSeries.Count;
 
                         List<string> setsCompletos = new List<string>();
 
@@ -70,11 +69,12 @@ public class ExportarPremium : MonoBehaviour
 
                         if (setsCompletos.Count > 0)
                         {
-                            detallePesoReps = string.Join(" / ", setsCompletos);
+                            detallePesoReps = string.Join(" , ", setsCompletos);
                         }
                     }
 
-                    csvContent.AppendLine($"{fecha};{nombreRutina};{nombreEjer};{totalSeries};{detallePesoReps}");
+                    // 2. Línea de datos actualizada: Quitamos la variable totalSeries
+                    csvContent.AppendLine($"{fecha};{nombreRutina};{nombreEjer};{detallePesoReps}");
                 }
             }
 

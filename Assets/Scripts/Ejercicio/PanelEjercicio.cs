@@ -8,19 +8,10 @@ public class PanelEjercicio : MonoBehaviour
     public Transform contenedorSeries;
     public GameObject filaInputsPrefab;
 
-    private int numeroSerie = 1;
 
     public void AgregarSerie()
     {
-        numeroSerie++;
-
         GameObject nuevaFila = Instantiate(filaInputsPrefab, contenedorSeries);
-
-        FilaSerie fila = nuevaFila.GetComponent<FilaSerie>();
-        if (fila != null)
-        {
-            fila.SetNumeroSerie(numeroSerie);
-        }
 
         foreach (TMP_InputField input in nuevaFila.GetComponentsInChildren<TMP_InputField>())
         {
@@ -28,9 +19,10 @@ public class PanelEjercicio : MonoBehaviour
             {
                 continue; 
             }
-            
             input.text = "0";
         }
+
+        ActualizarNumeracion();
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(contenedorSeries.GetComponent<RectTransform>());
     }
@@ -39,10 +31,28 @@ public class PanelEjercicio : MonoBehaviour
     {
         if (contenedorSeries.childCount <= 1) return;
 
-        Destroy(contenedorSeries.GetChild(contenedorSeries.childCount - 1).gameObject);
+        GameObject ultimaFila = contenedorSeries.GetChild(contenedorSeries.childCount - 1).gameObject;
+        
+        ultimaFila.transform.SetParent(null);
+        Destroy(ultimaFila);
 
-        numeroSerie--;
+        ActualizarNumeracion();
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(contenedorSeries.GetComponent<RectTransform>());
+    }
+
+    public void ActualizarNumeracion()
+    {
+        int contador = 1;
+        
+        foreach (Transform hijo in contenedorSeries)
+        {
+            FilaSerie fila = hijo.GetComponent<FilaSerie>();
+            if (fila != null)
+            {
+                fila.SetNumeroSerie(contador);
+                contador++;
+            }
+        }
     }
 }

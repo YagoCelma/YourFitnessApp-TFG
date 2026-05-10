@@ -5,13 +5,17 @@ using System.Collections.Generic;
 public class EjercicioItem : MonoBehaviour
 {
     public TMP_Text tituloEjercicio;
+    public TMP_InputField tituloInput;
 
     public Transform contenedorSeries;
     public GameObject seriePrefab;
 
     public void Inicializar(string nombre)
     {
-        tituloEjercicio.text = nombre;
+        if (tituloEjercicio != null)
+        {
+            tituloEjercicio.text = nombre;
+        }
     }
 
     public void AgregarSerie()
@@ -21,7 +25,17 @@ public class EjercicioItem : MonoBehaviour
 
     public string ObtenerNombre()
     {
-        return tituloEjercicio.text;
+        if (tituloInput != null && !string.IsNullOrWhiteSpace(tituloInput.text))
+        {
+            return tituloInput.text;
+        }
+        
+        if (tituloEjercicio != null && !string.IsNullOrWhiteSpace(tituloEjercicio.text))
+        {
+            return tituloEjercicio.text;
+        }
+
+        return null; 
     }
 
     public List<Dictionary<string, int>> ObtenerSeries()
@@ -32,10 +46,7 @@ public class EjercicioItem : MonoBehaviour
         {
             TMP_InputField[] inputs = serie.GetComponentsInChildren<TMP_InputField>();
 
-            Debug.Log($"Input[1]: {inputs[1].text}");
-            Debug.Log($"Input[2]: {inputs[2].text}");
-
-            if (inputs.Length < 2) continue;
+            if (inputs.Length < 3) continue;
 
             int kg = 0;
             int reps = 0;
@@ -44,10 +55,10 @@ public class EjercicioItem : MonoBehaviour
             int.TryParse(inputs[2].text, out reps);
 
             lista.Add(new Dictionary<string, int>
-        {
-            { "kg", kg },
-            { "reps", reps }
-        });
+            {
+                { "kg", kg },
+                { "reps", reps }
+            });
         }
 
         return lista;

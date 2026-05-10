@@ -12,7 +12,9 @@ public class AgregarSerie : MonoBehaviour
         GameObject nuevaFila = Instantiate(filaPrefab, contenedorSeries);
 
         foreach (TMP_InputField input in nuevaFila.GetComponentsInChildren<TMP_InputField>())
-            input.text = "";
+        {
+            input.text = "0";
+        }
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(contenedorSeries.GetComponent<RectTransform>());
     }

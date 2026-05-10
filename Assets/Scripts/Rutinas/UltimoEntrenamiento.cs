@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using TMPro;
 using Firebase.Auth;
@@ -71,29 +72,17 @@ public class UltimoEntrenamiento : MonoBehaviour
                 if (task.IsFaulted) return;
 
                 var documentos = task.Result.Documents.OrderByDescending(d => d.Id).ToList();
-                
-                string ordenLeido = string.Join(" -> ", documentos.Select(d => d.Id));
-                Debug.Log($"<color=cyan>Documentos REALES que ve Firebase: {ordenLeido}</color>");
-
                 DocumentSnapshot entrenamientoEncontrado = null;
 
                 foreach (var docEntrenamiento in documentos)
                 {
-                    Debug.Log($"<color=yellow>Comprobando fecha: {docEntrenamiento.Id}...</color>");
-                    
                     var ejerciciosSnapshot = await docEntrenamiento.Reference.Collection("ejercicios").GetSnapshotAsync();
-                    
                     bool coincidencia = ejerciciosSnapshot.Documents.Any(d => nombresEjerciciosRutina.Contains(d.Id));
 
                     if (coincidencia)
                     {
-                        Debug.Log($"<color=green>¡Éxito! Me quedo con la fecha: {docEntrenamiento.Id}</color>");
                         entrenamientoEncontrado = docEntrenamiento;
                         break; 
-                    }
-                    else
-                    {
-                        Debug.Log($"<color=red>La fecha {docEntrenamiento.Id} no tiene ejercicios de esta rutina. Pasando al siguiente...</color>");
                     }
                 }
 
@@ -104,18 +93,25 @@ public class UltimoEntrenamiento : MonoBehaviour
                 }
                 else
                 {
-                    MostrarDetalles(uid, db, entrenamientoEncontrado.Id);
+                    MostrarDetalles(uid, db, entrenamientoEncontrado);
                 }
             });
     }
 
-    void MostrarDetalles(string uid, FirebaseFirestore db, string fechaId)
+    void MostrarDetalles(string uid, FirebaseFirestore db, DocumentSnapshot entrenamientoDoc)
     {
+        string fechaId = entrenamientoDoc.Id;
+        
+        string nombreReal = nombreRutinaActual;
+        if (entrenamientoDoc.ContainsField("nombreRutina"))
+        {
+            nombreReal = entrenamientoDoc.GetValue<string>("nombreRutina");
+        }
+
         db.Collection("users").Document(uid).Collection("entrenamientos").Document(fechaId).Collection("ejercicios")
             .GetSnapshotAsync().ContinueWithOnMainThread(task =>
             {
-
-                string texto = $"<align=center><size=180%><b>{nombreRutinaActual}</b></size>\n";
+                string texto = $"<align=center><size=180%><b>{nombreReal}</b></size>\n";
                 texto += $"<color=#888888><size=90%>Sesión: {fechaId}</size></color></align>\n\n";
 
                 foreach (var doc in task.Result.Documents)
